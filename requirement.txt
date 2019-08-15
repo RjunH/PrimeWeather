@@ -1,0 +1,21 @@
+Hi Arjun,
+
+ 
+
+Can you please complete below code and send github link. Please reply to all.
+
+Please try to use best industry coding practice and add unit test cases.
+
+  
+
+Requirement 
+
+ 
+
+1. get any json output from https://openweathermap.org/api
+
+2. create node api which send same json output if current date(day) is prime 
+
+3. if current date(day) is not prime then api will send "Date is not prime so no date"
+
+4. Add audit data in database 
