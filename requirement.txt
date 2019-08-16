@@ -19,3 +19,9 @@ Requirement
 3. if current date(day) is not prime then api will send "Date is not prime so no date"
 
 4. Add audit data in database 
+
+
+
+TODO
+1. Evn variables.
+2. Unit test cases.
