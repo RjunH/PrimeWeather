@@ -12,7 +12,6 @@ function getOpenWeatherByCity(requestedCity, cb){
 
     request(url, function (err, response, body) {
         if(err){
-          console.log('error:', err);
           cb(err, null);
         } 
         
@@ -20,7 +19,6 @@ function getOpenWeatherByCity(requestedCity, cb){
         if(openWeatherRes.cod == 200){
             cb(null, openWeatherRes);
         }else{
-            console.log(openWeatherRes);
             cb(openWeatherRes, null);
         }
           
@@ -37,11 +35,10 @@ function retrieveWeatherByCity(req, res) {
         var newWeather = new Weather(response);
         newWeather.save(function (err) {
             if(err) {
-                console.log('Unable to save Weather to database');
                 return res.status(500).send(err);
             } 
 
-            console.log('Weather saved to DB successfully');
+            console.log('Weather data saved to DB successfully');
             res.send(newWeather);
             
         });
