@@ -17,7 +17,7 @@ Node.js RestFul APIs to fetch the current weather information
 * npm install
 
 ### To Run Server
-
+(Assuming MongoDB sever is running locally on 127.0.0.1:27017)
 * nodemon
 
 
