@@ -48,25 +48,39 @@ function retrieveWeatherByCity(req, res) {
     })
 };
 
-function retrievePrimeDayWeather(req, res){
-    let day = req.params.day;
+function retrieveWeatherOfPrimeDay(req, res){   
     let currentDate = new Date(); //December 11, 2019 23:15:00
-    if(day){
-        currentDate.setDate(day);
-    }
 
     if(isPrime(currentDate.getDate())){
         retrieveWeatherByCity(req, res);
     }else{
-        res.status(400).send('Date is not prime so no date');
+        return res.status(400).send({'mesage':'Date is not prime so no date'});
+    }
+}
+
+function retrievePrimeWeatherByDay(req, res){
+    let day = req.params.day;
+   
+    let currentDate = new Date();
+    let lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth()+1, 0);
+
+    if(day && day <= lastDayOfMonth.getDate()){
+        currentDate.setDate(day);
+        if(isPrime(currentDate.getDate())){
+            retrieveWeatherByCity(req, res);
+        }else{
+            return res.status(400).send({'message':'Date is not prime so no date'});
+        }
+    }else{
+        return res.status(400).send({'message': 'Please provide the valid date of a month'}); 
     }
 }
 
 
 function isPrime(num) {
-    var sqrtnum=Math.floor(Math.sqrt(num));
-      var prime = num != 1;
-      for(var i=2; i<=sqrtnum; i++) { // sqrtnum+1
+    let sqrtnum=Math.floor(Math.sqrt(num));
+      let prime = num != 1;
+      for(let i=2; i<=sqrtnum; i++) { 
           if(num % i == 0) {
               prime = false;
               break;
@@ -78,4 +92,5 @@ function isPrime(num) {
 
 
 exports.retrieveWeatherByCity = retrieveWeatherByCity;
-exports.retrievePrimeDayWeather = retrievePrimeDayWeather;
+exports.retrieveWeatherOfPrimeDay = retrieveWeatherOfPrimeDay;
+exports.retrievePrimeWeatherByDay = retrievePrimeWeatherByDay;

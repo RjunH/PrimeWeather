@@ -15,5 +15,10 @@
     "mongoose-double": "0.0.1",
     "nodemon": "^1.19.1",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.0",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
   }
 }

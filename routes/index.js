@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/api',function(req,res){
+router.get('/apis',function(req, res){
     let exposedAPIs = 
       [
         {
@@ -21,17 +21,12 @@ router.get('/api',function(req,res){
         },
         {
           "Method": "GET",
-          "API": "/api/weather/prime/:city",
-          "Desc": "Retrieves weather of requested city if current day is Prime"
-        },
-        {
-          "Method": "GET",
           "API": "/api/weather/prime/:day",
           "Desc": "Retrieves weather of defauly city if requested day is Prime"
         },
         {
           "Method": "GET",
-          "API": "/api/weather/prime/:city/:day",
+          "API": "/api/weather/prime/:day/:city",
           "Desc": "Retrieves weather of requested city if requested day is Prime"
         }
       ];
