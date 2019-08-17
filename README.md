@@ -9,7 +9,8 @@ Node.js RestFul APIs to fetch the current weather information
 | GET           | /api/weather/current/:city | Retrieves current weather of requested city |
 | GET           | /api/weather/prime | Retrieves weather information if current day is Prime ( Default city i.e. Pune ) |
 | GET           | /api/weather/prime/:day | Retrieves weather information if requested day is Prime ( Default city i.e. Pune )  |
-| GET           | /api/weather/prime/:day/:city |Retrieves weather information of requested city if requested day is Prime |
+| GET           | /api/weather/prime/:day/:city | Retrieves weather information of requested city if requested day is Prime |
+| GET           | /apis | Lists all exposed APIs |
 
 
 ### Installations
