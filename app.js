@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 require('dotenv').config();
-const db = require('./database/db');
+const db = require('./config/db');
 const indexRoutes = require('./routes/index');
 const weatherRoutes = require('./routes/weather');
 
